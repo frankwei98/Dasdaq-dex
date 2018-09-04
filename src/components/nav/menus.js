@@ -14,6 +14,11 @@ export const menus = ({logined}) => ([
         name: i18n('market')
     },
     {
+        path: '/exchange',
+        icon: 'line-chart',
+        name: 'Exchange Demo'
+    },
+    {
         path: '/dapp',
         icon: 'appstore',
         name: i18n('app store')
