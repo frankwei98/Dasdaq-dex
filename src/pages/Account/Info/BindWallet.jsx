@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Card, Alert, Button, notification } from 'antd';
-import { network } from "../../scatter";
+import { network } from "../../../scatter";
 import IconFont from "../../../components/IconFont";
 import { sign, getMyAddr } from "../../../apieth"
 import { bindMetaMask, bindScatter } from "../../../api/auth";
