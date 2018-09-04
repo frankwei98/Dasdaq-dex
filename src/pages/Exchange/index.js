@@ -7,12 +7,12 @@ import withContent from "../ContentWrapper";
 const LoadingMessage = (name) => (<div> Loading Market {name} modules, Please wait</div>)
 
 export const MarketList = Loadable({
-    loader: () => import(/* webpackChunkName: "exchange" */ './MarketList'),
+    loader: () => import(/* webpackChunkName: "exchange" */ './TokensList'),
     loading: () => LoadingMessage('Market')
 });
 
 export const MarketDetail = Loadable({
-    loader: () => import(/* webpackChunkName: "exchange-detail" */ './MarketDetail'),
+    loader: () => import(/* webpackChunkName: "exchange-detail" */ './TokenDetail'),
     loading: () => LoadingMessage('MarketDetail')
 });
 
