@@ -3,7 +3,7 @@ import { Col, Menu, Row, Layout} from 'antd';
 import {
   Switch, Route, Link
 } from 'react-router-dom'
-import { withScatter, eosNetwork } from "../../scatter";
+import { withScatter } from "../../scatter";
 
 import BindAccount from './Info/BindAccount'
 import BindWallet from './Info/BindWallet'
@@ -16,16 +16,12 @@ const {
 const { Content, Sider } = Layout;
 
 class User extends React.Component {
-
-  eosNetwork = eosNetwork['mainnet']
-
   render() {
     const { match } = this.props
     return (
       <div>
         <Row>
           <Col span={24}>
-
             <Layout>
               <Sider
                 theme="light"
