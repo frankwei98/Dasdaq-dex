@@ -3,6 +3,7 @@ import { Card, Alert, Button, notification } from 'antd';
 import { network } from "../../../scatter";
 import IconFont from "../../../components/IconFont";
 import { sign, getMyAddr } from "../../../apieth"
+import { withScatter } from "../../../scatter";
 import { bindMetaMask, bindScatter } from "../../../api/auth";
 
 const style = {
@@ -14,7 +15,7 @@ const style = {
   },
 };
 
-class InfoUser extends Component {
+class BindWallet extends Component {
   eosNetwork = network
   async requestIdentity() {
     const { scatter } = this.props
@@ -101,4 +102,4 @@ class InfoUser extends Component {
 
 }
 
-export default InfoUser;
+export default withScatter(BindWallet);
