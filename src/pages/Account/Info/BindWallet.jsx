@@ -17,6 +17,9 @@ const style = {
 
 class BindWallet extends Component {
   eosNetwork = network
+  state = {
+    identity: null
+  }
   async requestIdentity() {
     const { scatter } = this.props
     try {
