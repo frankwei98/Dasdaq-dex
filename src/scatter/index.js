@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import commonNetwork from "./commonNetwork.json";
 
 export const eosNetwork = commonNetwork
+export const network = commonNetwork['kylin']
 
 const { Consumer, Provider } = React.createContext(null);
 
