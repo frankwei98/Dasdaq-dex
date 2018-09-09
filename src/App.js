@@ -16,6 +16,7 @@ import accountRoutes from "./containers/Account";
 import { Home } from "./pages/asyncRenderWrapper";
 import Market from "./pages/Market";
 import Dapp from "./pages/DappStore";
+import Exchange from "./pages/Exchange";
 
 // Page
 import Footer from "./components/Footer";
@@ -66,6 +67,7 @@ class App extends Component {
                     <Route path="/dapp" component={Dapp} />
                     {/* Routes Market Data Part */}
                     <Route path="/market" component={Market} />
+                    <Route path="/exchange" component={Exchange} />
                     <Route component={PageNotFound} />
                   </Switch>
                 </div>
