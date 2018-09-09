@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import ScatterJS from 'scatter-js/dist/scatter.esm';
+
 import { getMyInfo } from "./api/auth";
-import { userLogin } from "./actions";
+import { userLogin, setScatter } from "./actions";
 import intl from 'react-intl-universal';
 
 // Connecting store's state as props in the export process at the bottom

@@ -2,7 +2,7 @@ import React from "react"
 import { Form, Icon, Input, Button, Checkbox, Modal, notification, Card, Row, Col, Alert } from 'antd';
 import { NavLink } from "react-router-dom";
 import intl from "react-intl-universal";
-import { login, getMyInfo, loginByMetaMask, loginByScatter } from "../../api/auth";
+import { loginByScatter } from "../../api/auth";
 import IconFont from "../../components/IconFont";
 import withContent from "../ContentWrapper";
 import { compose } from "ramda";
