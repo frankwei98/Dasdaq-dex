@@ -30,7 +30,7 @@ export class ScatterProvider extends Component {
             this.setState({ scatter })
             // It is good practice to take this off the window 
             // once you have a reference to it. @GetScatter Team
-            window.scatter = null
+            // window.scatter = null
         })
     }
 

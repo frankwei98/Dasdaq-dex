@@ -9,19 +9,9 @@ export const menus = ({logined}) => ([
         name: i18n('home')
     },
     {
-        path: '/market',
-        icon: 'area-chart',
-        name: i18n('market')
-    },
-    {
         path: '/exchange',
         icon: 'line-chart',
         name: 'Exchange Demo'
-    },
-    {
-        path: '/dapp',
-        icon: 'appstore',
-        name: i18n('app store')
     },
     {
         path: '/account/info',
@@ -43,12 +33,12 @@ export const menus = ({logined}) => ([
         float: 'right',
         isDisplay: !logined
     },
-    {
-        path: '/account/register',
-        name: intl.get('user.register.register'),
-        float: 'right',
-        isDisplay: !logined
-    }
+    // {
+    //     path: '/account/register',
+    //     name: intl.get('user.register.register'),
+    //     float: 'right',
+    //     isDisplay: !logined
+    // }
 ])
 
 const setMenuDefaultDisplay = menu => (menu.isDisplay === undefined ? Object.assign(menu, { isDisplay: true }) : menu)

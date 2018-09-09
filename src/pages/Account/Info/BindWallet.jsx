@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Card, Alert, Button, notification } from 'antd';
 import { network } from "../../../scatter";
 import IconFont from "../../../components/IconFont";
-import { sign, getMyAddr } from "../../../apieth"
 import { withScatter } from "../../../scatter";
 import { bindMetaMask, bindScatter } from "../../../api/auth";
 
@@ -31,19 +30,19 @@ class BindWallet extends Component {
   }
 
   async signByMetaMask(e) {
-    const account = await getMyAddr()
-    const signature = await sign("dasdaq")
-    console.log(signature)
-    try {
-      await bindMetaMask({ eth_address: account, metamask_signature: signature.result })
-      notification.success({
-        message: '绑定成功'
-      })
-    } catch (error) {
-      notification.error({
-        message: error.message
-      })
-    }
+    // const account = await getMyAddr()
+    // const signature = await sign("dasdaq")
+    // console.log(signature)
+    // try {
+    //   await bindMetaMask({ eth_address: account, metamask_signature: signature.result })
+    //   notification.success({
+    //     message: '绑定成功'
+    //   })
+    // } catch (error) {
+    //   notification.error({
+    //     message: error.message
+    //   })
+    // }
   }
 
   async requestIdAndSignWithScatter() {

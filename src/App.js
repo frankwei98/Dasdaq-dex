@@ -14,8 +14,6 @@ import locales from "./locale";
 // Async Load Pages using react-loadable(https://github.com/jamiebuilds/react-loadable)
 import accountRoutes from "./containers/Account";
 import { Home } from "./pages/asyncRenderWrapper";
-import Market from "./pages/Market";
-import Dapp from "./pages/DappStore";
 import Exchange from "./pages/Exchange";
 
 // Page
@@ -63,10 +61,7 @@ class App extends Component {
                         {accountRoutes.map(route => <Route key={route.path} {...route} />)}
                       </Switch>
                     </Route>
-                    {/* Routes Dapp Store Part */}
-                    <Route path="/dapp" component={Dapp} />
                     {/* Routes Market Data Part */}
-                    <Route path="/market" component={Market} />
                     <Route path="/exchange" component={Exchange} />
                     <Route component={PageNotFound} />
                   </Switch>
