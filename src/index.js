@@ -1,24 +1,28 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+// import { Provider } from 'react-redux'
+// import { createStore } from 'redux'
+import Store from "./store";
 import './index.css';
 import App from './App';
-import { ScatterProvider } from "./scatter";
+// import { ScatterProvider } from "./scatter";
 import registerServiceWorker from './registerServiceWorker';
-import rootReducer from './reducers'
+// import rootReducer from './reducers'
 
-const store = createStore(
-    rootReducer,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-)
+// const store = createStore(
+//     rootReducer,
+//     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+// )
 
 render(
-    <Provider store={store}>
-        <ScatterProvider>
-            {providerState => <App {...providerState} /> } 
-        </ScatterProvider>
-    </Provider>
+    // <Provider store={store}>
+    //     <ScatterProvider>
+    //         {providerState => <App {...providerState} /> } 
+    //     </ScatterProvider>
+    // </Provider>
+    <Store.Container>
+        <App />
+    </Store.Container>
     , document.getElementById('root'));
 
 registerServiceWorker();

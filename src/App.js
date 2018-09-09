@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ScatterJS from 'scatter-js/dist/scatter.esm';
-
+import Store from "./store";
 import { getMyInfo } from "./api/auth";
 import { userLogin, setScatter } from "./actions";
 import intl from 'react-intl-universal';
@@ -15,7 +15,7 @@ import locales from "./locale";
 
 // Async Load Pages using react-loadable(https://github.com/jamiebuilds/react-loadable)
 import accountRoutes from "./containers/Account";
-import { Home } from "./pages/asyncRenderWrapper";
+import { Home, SDex } from "./pages/asyncRenderWrapper";
 import Exchange from "./pages/Exchange";
 
 // Page
@@ -35,7 +35,9 @@ class App extends Component {
   }
   
   async componentDidMount() {
-    const { lang, saveUserData } = this.props
+    const { store } = this.props
+    const lang = store.get('lang')
+    // const { lang, saveUserData } = this.props
     console.info(`用户语言为: ${lang}`)
     // i18n 的黑魔法，不 await 阻塞会引起部分i18n文字为空白
     await intl.init({
@@ -43,9 +45,6 @@ class App extends Component {
       locales,
     })
     this.setState({ i18nLoaded: true })
-    getMyInfo().then(res => {
-      saveUserData(res)
-    })
   }
   render() {
     return this.state.i18nLoaded && (
@@ -65,6 +64,7 @@ class App extends Component {
                     </Route>
                     {/* Routes Market Data Part */}
                     <Route path="/exchange" component={Exchange} />
+                    <Route path="/SDex" component={SDex} />
                     <Route component={PageNotFound} />
                   </Switch>
                 </div>
@@ -79,9 +79,10 @@ class App extends Component {
 }
 
 
-export default connect(
-  (state) => ({ lang: state.lang }),
-  (dispatch) => ({
-    saveUserData: code => dispatch(userLogin(code)),
-  })
-)(App);
+// export default connect(
+//   (state) => ({ lang: state.lang }),
+//   (dispatch) => ({
+//     saveUserData: code => dispatch(userLogin(code)),
+//   })
+// )(App);
+export default Store.withStore(App)

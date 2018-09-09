@@ -9,7 +9,7 @@ export const menus = ({logined}) => ([
         name: i18n('home')
     },
     {
-        path: '/exchange',
+        path: '/SDex',
         icon: 'line-chart',
         name: 'Exchange Demo'
     },
